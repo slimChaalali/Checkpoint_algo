@@ -1,0 +1,39 @@
+algorithm char_type_counter
+
+var
+    wordCount, vowelCount, charCount, counter: integer;
+    sentence: string;
+
+begin
+    read(sentence);
+    wordCount := 0;
+    vowelCount := 0;
+    charCount := 0;
+    counter := 1;
+    if sentence[length(sentence)]= '.' then
+    begin
+        while counter <= length(sentence) do
+            begin
+            currentChar := sentence[counter];
+            charCount := charCount + 1;
+
+            if currentChar = ' ' then
+                 begin
+                wordCount := wordCount + 1;
+                end;
+
+            if currentChar in ['a', 'e', 'i', 'o', 'u'] then
+                begin
+                vowelCount := vowelCount + 1;
+                end;
+
+        counter := counter + 1;
+        end;
+
+    wordCount := wordCount + 1;
+    end;
+
+    write(charCount);
+    write(wordCount);
+    write(vowelCount);
+end.

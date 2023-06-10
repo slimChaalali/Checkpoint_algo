@@ -1,0 +1,27 @@
+ALGORITHM uniqueElementsSum
+
+VAR
+firstSet : ARRAY_OF INTEGER[4];
+secondSet : ARRAY_OF INTEGER[4];
+i,j,totalSum : INTEGER := 0;
+isDuplicate : BOOLEAN;
+BEGIN
+firstSet=[1,2,4]
+secondSet=[2,8,9]
+
+FOR i FROM 0 TO length(firstSet) DO 
+    isDuplicate := false;
+    FOR j FROM 0 TO (length(secondSet)-1) DO
+        IF firstSet[i] = secondSet[j] THEN 
+            isDuplicate := true;
+        END_IF
+    END_FOR
+    IF NOT isDuplicate THEN 
+        totalSum := totalSum + firstSet[i];
+    END_IF
+
+END_FOR
+
+
+
+Write("Sum of all distinct elements: ", totalSum);
